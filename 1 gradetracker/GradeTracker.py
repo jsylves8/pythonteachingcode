@@ -7,17 +7,20 @@ needs to have login to protect the student data
 import statistics as s
 
 #add constants next
-admins = {'Faculty1':'ABC123','Faculty2':'ABC123'}
+admins = {'John':'Sylvester','Faculty2':'ABC123'}
 
 #Like the admins above is a dictionary but of students. Dictionaries use curly brackets with colons to associate keys with values. In this case, each student's first name is a key. The values are lists of grades. 
 #Lists are denoted with square brackets. Values are indexed within starting with 0 for the first one. Each value is separated by commas.
 students = {'Alex':[87,88,98],
             'Sally':[88,67,93],
-            'Nboke':[90,88,78]}
+            'Nboke':[90,88,78],
+            'Tyler':[98,100,70],
+            'Issa':[87,93,92],
+            'Marissa':[78,87,100]}
 
 #Now we define functions. Functions encapsulate logic into reusable recipes that can be executed whenever we need them by calling their name with parentheses.
 def enterGrades():
-    nameToEnter = input('Student name: ')
+    nameToEnter = input("Student's Name: ")
     gradeToEnter = input('Grade: ')
     #This checks through the keys of the students dictionary to see if the name entered exactly matches any one in there.
     if nameToEnter in students:
