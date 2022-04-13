@@ -1,6 +1,8 @@
 from tkinter import *
 from math import sqrt as sqr
-
+from math import sin as Sin
+from math import cos as Cos
+from math import tan as Tan
 
 class Application(Frame):
     """
@@ -74,6 +76,9 @@ class Application(Frame):
         e = e.replace("²", "**2")
         e = e.replace("^", "**")
         e = e.replace("÷", "/")
+        e = e.replace("sin","Sin")
+        e = e.replace("cos","Cos")
+        e = e.replace("tan","Tan")
 
         try:
             ans = eval(e)
@@ -144,8 +149,17 @@ class Application(Frame):
         Creates the widgets to be used in the grid.
         :return: None
         """
-        self.eq_bttn = Button(self, text="=", width=20, height=3, bg="lightgrey", command=lambda: self.calculate())
-        self.eq_bttn.grid(row=4, column=4, columnspan=2)
+        self.sin_bttn = Button(self, text="sin", width=9, height=3, command=lambda: self.add_chr('sin'))
+        self.sin_bttn.grid(row=1, column=6)
+
+        self.sin_bttn = Button(self, text="cos", width=9, height=3, command=lambda: self.add_chr('cos'))
+        self.sin_bttn.grid(row=2, column=6)
+
+        self.sin_bttn = Button(self, text="tan", width=9, height=3, command=lambda: self.add_chr('tan'))
+        self.sin_bttn.grid(row=3, column=6)
+
+        self.eq_bttn = Button(self, text="=", width=27, height=3, bg="lightgrey", command=lambda: self.calculate())
+        self.eq_bttn.grid(row=4, column=4, columnspan=3)
 
         self.ac_bttn = Button(self, text='CE', width=9, height=3, command=lambda: self.clear_all())
         self.ac_bttn.grid(row=1, column=4)
@@ -186,7 +200,7 @@ class Application(Frame):
         self.six_bttn = Button(self, text="6", width=9, height=3, command=lambda: self.add_chr(6))
         self.six_bttn.grid(row=2, column=2)
 
-        self.one_bttn = Button(self, text="1", width=9, height=3, command=lambda: self.add_chr(1))
+        self.one_bttn = Button(self, text="John", width=9, height=3, command=lambda: self.add_chr("Sylvester"))
         self.one_bttn.grid(row=3, column=0)
 
         self.two_bttn = Button(self, text="2", width=9, height=3, command=lambda: self.add_chr(2))
